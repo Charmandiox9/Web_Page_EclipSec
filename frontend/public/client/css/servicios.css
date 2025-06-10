@@ -1,0 +1,276 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+  background: linear-gradient(135deg, #121212, #1a1a1a, #0d0d0d);
+  background-size: 400% 400%;
+  animation: backgroundAnimation 15s ease infinite;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes backgroundAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+main, section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+header h1 {
+  color: #00e676;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #00b0ff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #00e676;
+}
+
+/* Responsive pequeño */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    margin: 6px 8px;
+  }
+}
+
+/* Estilo para sección tipo "servicios" o "tarjetas" */
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+  gap: 24px;
+  padding: 20px 10px;
+}
+
+/* Tarjetas con glassmorphism y animación al aparecer */
+.service-card {
+  background-color: #1f1f1f;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Al pasar el cursor, la tarjeta desaparece */
+.service-card:hover {
+  opacity: 1; /* que no desaparezca */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px 3px rgba(0, 230, 118, 0.7); /* verde neón */
+  border-color: #00e676;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+  }
+}
+
+/* Título de tarjeta con efecto degradado */
+.service-card h2 {
+  color: #00e5ff;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #00e676, #00b0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Texto descriptivo */
+.service-card p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+/* Precio destacado */
+.service-card .precio {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.1rem;
+}
+
+/* Botón dentro de tarjeta (opcional) */
+.service-card button {
+  background: #00e676;
+  color: #121212;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.service-card button:hover {
+  background: #00c853;
+}
+
+/* Responsive ajustes para móvil */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+
+  /* Hacemos que main tome el espacio disponible */
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;   /* Centrado horizontal */
+    align-items: center;       /* Centrado vertical */
+    padding: 40px 20px;
+  }
+
+  /* Servicios a 1 columna en móvil */
+  .services {
+    grid-template-columns: 1fr; /* solo 1 columna */
+    padding: 20px 10px;
+  }
+
+  .service-card {
+    padding: 20px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+  padding: 25px 20px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+
+.footer-container p {
+  flex: 1 1 250px;
+  margin: 0;
+}
+
+.footer-container nav {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.footer-container nav a {
+  color: #00b0ff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-container nav a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  flex: 1 1 150px;
+  text-align: right;
+}
+
+.social-icons a {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 24px;
+  filter: invert(80%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: invert(40%) sepia(70%) saturate(500%) hue-rotate(140deg);
+}
+
+/* Footer responsive */
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons {
+    text-align: center;
+  }
+}

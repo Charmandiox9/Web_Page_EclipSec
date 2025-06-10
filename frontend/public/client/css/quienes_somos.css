@@ -1,0 +1,163 @@
+body {
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+main, section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+    .header-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+header h1 {
+  color: #00e676;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #00b0ff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: #00e676;
+}
+
+/* Responsive pequeño */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    margin: 6px 8px;
+  }
+}
+
+.section-dark {
+  
+  background: linear-gradient(135deg, #1e1e1e, #121212);
+  /*background-color: #1e1e1e;*/
+  padding: 40px 20px;
+  
+  /* Añadido para centrar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Centrado vertical */
+  align-items: center;      /* Centrado horizontal */
+  
+  /* Para que tome toda la altura de la ventana */
+  min-height: 70vh;  /* Ajusta según lo que quieras de espacio */
+  text-align: center; /* Que el texto quede centrado */
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+  text-align: center; /* Asegura que los párrafos estén centrados */
+}
+
+
+h2 {
+  color: #00e676;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #00e676a0;
+}
+footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+  padding: 25px 20px;
+}
+
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+
+.footer-container p {
+  flex: 1 1 250px;
+  margin: 0;
+}
+
+.footer-container nav {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.footer-container nav a {
+  color: #00b0ff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-container nav a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  flex: 1 1 150px;
+  text-align: right;
+}
+
+.social-icons a {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 24px;
+  filter: invert(80%);
+  transition: filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  filter: invert(40%) sepia(70%) saturate(500%) hue-rotate(140deg);
+}
+
+/* Footer responsive */
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-icons {
+    text-align: center;
+  }
+}

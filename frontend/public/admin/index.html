@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panel de Administración | EclipSec</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <header>
+    <h1>Panel de Administración - EclipSec</h1>
+    <nav>
+      <a href="usuarios.html">Usuarios</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contrataciones.html">Contrataciones</a>
+      <a href="#" id="logout">Cerrar Sesión</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-summary">
+      <div class="card">
+        <h2>Usuarios</h2>
+        <p id="numUsuarios">Cargando...</p>
+      </div>
+      <div class="card">
+        <h2>Servicios</h2>
+        <p id="numServicios">Cargando...</p>
+      </div>
+      <div class="card">
+        <h2>Contrataciones</h2>
+        <p id="numContrataciones">Cargando...</p>
+      </div>
+    </section>
+
+    <section class="welcome-message">
+      <h2>Bienvenido, administrador</h2>
+      <p>Desde aquí puedes gestionar usuarios, servicios y contrataciones.</p>
+    </section>
+  </main>
+
+  <script>
+    // Simulación de carga de datos (reemplaza con llamadas reales a tu API o backend)
+    document.addEventListener('DOMContentLoaded', () => {
+      // Ejemplo datos estáticos o fetch desde backend
+      document.getElementById('numUsuarios').textContent = '120';
+      document.getElementById('numServicios').textContent = '25';
+      document.getElementById('numContrataciones').textContent = '50';
+
+      // Logout: limpiar token y redirigir a login
+      document.getElementById('logout').addEventListener('click', () => {
+        localStorage.removeItem('token');  // O como manejes la sesión
+        window.location.href = '/login.html';  // Ajusta la ruta según tu estructura
+      });
+    });
+  </script>
+</body>
+</html>
